@@ -1,0 +1,496 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $white;
+
+}
+
+.header {
+    position: relative;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid $black;
+
+}
+
+.header__foto {
+    position: absolute;
+    top: 0px;
+}
+
+.header__titulo {
+    @include header__titulo;
+}
+
+
+.conTacto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    a {
+        @include conTacto;
+    }
+}
+
+
+main {
+    background-color: $violet;
+    padding: 5px 5px;
+}
+
+.menu__titulo {
+    color: $black;
+    font-size: 30px;
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.menu__carta {
+
+    margin-top: 30px;
+
+}
+
+.menuPinot {
+    height: 40px;
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    a {
+        @include menuPinot;
+
+        &:hover {
+            color: $white;
+            text-decoration: none;
+
+        }
+
+    }
+
+}
+
+
+/* GRID */
+
+.fotos {
+
+    margin: auto;
+    background-color: $violet;
+    width: 80vw;
+    height: 80vh;
+
+
+    display: grid;
+    grid-template-columns: 20% 20% 20% 40%;
+    grid-template-rows: 50vh 30vh;
+    grid-row-gap: 2px;
+
+    grid-template-areas:
+
+        "cafe2 cafe2 cafe2 beneficios"
+        "cafe1 comida cafe3 beneficios";
+}
+
+.fotos__cafe2 {
+
+    background-image: url(../fotos/cafe2.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: cafe2;
+
+}
+
+.fotos__cafe1 {
+
+    background-image: url(..//fotos/cafe1.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-area: cafe1;
+
+}
+
+.fotos__comida {
+
+    grid-area: comida;
+    background-image: url(..//fotos/comida.jpg);
+    background-position: center;
+    background-size: cover;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+.fotos__cafe3 {
+
+    background-image: url(..//fotos/cafe3.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-area: cafe3;
+}
+
+.fotos__beneficios {
+
+    grid-area: beneficios;
+    align-self: center;
+
+    p {
+        text-align: justify;
+        padding-top: 10px;
+        padding-left: 20px;
+        font-size: 30px;
+        font-family: sans-serif;
+        font-weight: bold;
+
+    }
+
+}
+
+.fotos__beneficios ul {
+
+    padding-top: 30px;
+    list-style: none;
+
+    li {
+
+        text-align: justify;
+        padding: 20px;
+        font-size: 20px;
+        font-family: sans-serif;
+
+    }
+
+}
+
+/* GRID */
+
+.description__parrafo {
+    padding-top: 50px;
+    color: $black;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    letter-spacing: 1px;
+
+}
+
+.description__titulo {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 50px;
+
+}
+
+/*pie de pagina*/
+
+.footer {
+
+    background: $violetgradient;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-items: center;
+
+}
+
+.footer__redesSociales {
+
+    text-align: end;
+}
+
+
+.footer__redes {
+
+    margin: 5px;
+}
+
+
+.footer__poliTicas {
+
+    text-align: end;
+
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* Responsive */
+
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+
+    .header__titulo {
+        color: $black;
+        text-align: end;
+        font-size: 220%;
+        font-family: 'Anton', sans-serif;
+        margin: 0 auto;
+        word-spacing: 2px;
+
+    }
+
+    /* GRID */
+    .fotos {
+
+        margin: auto;
+        background-color: $violetgradient;
+        width: 80vw;
+        height: 80vh;
+
+
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 20vh 20vh 20vh 20vh;
+        grid-row-gap: 2px;
+
+        grid-template-areas:
+
+            "cafe2 beneficios"
+            "cafe1 beneficios"
+            "comida beneficios"
+            "cafe3 beneficios";
+
+    }
+
+    .fotos__cafe2 {
+
+        background-image: url(../fotos/cafe2.jpg);
+        background-size: cover;
+        background-position: center;
+        grid-area: cafe2;
+
+    }
+
+    .fotos__cafe1 {
+
+        background-image: url(..//fotos/cafe1.jpg);
+        background-position: center;
+        background-size: cover;
+        grid-area: cafe1;
+
+    }
+
+    .fotos__comida {
+
+        grid-area: comida;
+        background-image: url(..//fotos/comida.jpg);
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .fotos__cafe3 {
+
+        background-image: url(..//fotos/cafe3.jpg);
+        background-position: center;
+        background-size: cover;
+        grid-area: cafe3;
+    }
+
+    .fotos__beneficios {
+
+        grid-area: beneficios;
+        align-self: center;
+
+        p {
+
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 20px;
+            font-size: 25px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+    }
+
+
+
+    .fotos__beneficios ul {
+
+        padding-top: 30px;
+        list-style: none;
+
+        li {
+
+            text-align: left;
+            padding: 20px;
+            font-size: 15px;
+            font-family: sans-serif;
+
+
+        }
+
+    }
+
+    /* GRID */
+
+
+
+    /* menu */
+
+    .menuPinot {
+        height: 250px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+
+        a {
+            color: $white;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration: none;
+            min-width: 300px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(148, 109, 109, 0.25);
+        }
+
+        &:hover {
+            color: $white;
+            text-decoration: none
+        }
+    }
+
+    /* menu */
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+
+@media screen and (min-width: 300px) and (max-width: 599px) {
+
+    .header__titulo {
+        color: black;
+        text-align: end;
+        font-size: 200%;
+        font-family: 'Anton', sans-serif;
+        margin: 0 auto;
+        word-spacing: 2px;
+
+    }
+
+    .header a {
+        display: none;
+
+    }
+
+    /* GRID */
+    .fotos {
+
+        margin: auto;
+        background-color: rgb(226, 218, 238);
+        width: 80vw;
+        height: 80vh;
+
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20vh 20vh 20vh 20vh;
+        grid-row-gap: 2px;
+
+        grid-template-areas:
+
+            "cafe2"
+            "cafe1"
+            "comida"
+            "cafe3";
+
+    }
+
+    .fotos__cafe2 {
+
+        background-image: url(../fotos/cafe2.jpg);
+        background-size: cover;
+        background-position: center;
+        grid-area: cafe2;
+
+    }
+
+    .fotos__cafe1 {
+
+        background-image: url(..//fotos/cafe1.jpg);
+        background-position: center;
+        background-size: cover;
+        grid-area: cafe1;
+
+    }
+
+    .fotos__comida {
+
+        grid-area: comida;
+        background-image: url(..//fotos/comida.jpg);
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .fotos__cafe3 {
+
+        background-image: url(..//fotos/cafe3.jpg);
+        background-position: center;
+        background-size: cover;
+        grid-area: cafe3;
+    }
+
+    .fotos__beneficios {
+
+        display: none;
+
+    }
+
+    /* GRID */
+
+
+
+    /* menu */
+
+    .menuPinot {
+        height: 250px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration: none;
+            min-width: 300px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(148, 109, 109, 0.25);
+        }
+
+        &:hover {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+
+    /* menu */
+
+}
